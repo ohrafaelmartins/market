@@ -1,0 +1,33 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+    postgres:
+      image: postgres:9.4-alpine
+      container_name: desafio-postgres
+      working_dir: /application
+      volumes:
+        - .:/application
+      environment:
+        - POSTGRES_USER=pg_desafio
+        - POSTGRES_PASSWORD=pg_desafio
+        - POSTGRES_DB=pg_desafio
+      ports:
+        - "8084:5432"
+    webserver:
+      image: nginx:alpine
+      container_name: desafio-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "8080:80"
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: desafio-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php5/fpm/conf.d/99-overrides.ini

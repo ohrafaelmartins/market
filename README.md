@@ -1,22 +1,19 @@
-# market
-Desafio SoftExpert
+# Desafio SoftExpert
 
+## Ambiente de Desenvolvimento
 
-----
+O desafio SoftExpert requer um ambiente de desenvolvimento configurado com as seguintes ferramentas e versões:
 
-Ambiente de desenvolvimento:
-Ubuntu 18.04
-Docker
-Docker Compose
-php5.6
-postgres9.4
+- Ubuntu 18.04
+- Docker
+- Docker Compose
+- PHP 5.6
+- PostgreSQL 9.4
 
----
+## Arquivo de Dump do Banco de Dados
 
-Arquivo de dump do banco de dados:
-    - init.pgsql
+O arquivo de dump do banco de dados é chamado "init.pgsql".
 
----
+## Configuração da Conexão
 
-Variáveis para configuração da conexão estão no arquivo
-    - config.php
+As variáveis para configuração da conexão estão no arquivo "config.php".
